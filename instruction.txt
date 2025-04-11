@@ -1,0 +1,11 @@
+pip install groq python-dotenv
+
+New-Item .env -Force
+
+Set-Content .env "GROQ_API_KEY=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"
+
+Get-Content .env
+
+pip list | findstr "groq python-dotenv"
+
+python -c "import os; from dotenv import load_dotenv; load_dotenv(); print('Success' if os.getenv('GROQ_API_KEY') else 'Fail')"
